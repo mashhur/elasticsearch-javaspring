@@ -1,6 +1,6 @@
 package com.mashhur.elasticsearch.demo.Index;
 
-import com.mashhur.elasticsearch.demo.client.ESClient;
+import com.mashhur.elasticsearch.demo.client.EsClient;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.common.unit.Fuzziness;
@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
 public class QueryController {
     private static final Logger LOG = LoggerFactory.getLogger(QueryController.class);
 
-    private ESClient esClient;
+    private EsClient esClient;
 
-    public QueryController(ESClient esClient) {
+    public QueryController(EsClient esClient) {
         this.esClient = esClient;
     }
 

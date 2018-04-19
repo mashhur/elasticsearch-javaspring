@@ -1,6 +1,6 @@
 package com.mashhur.elasticsearch.demo.Index;
 
-import com.mashhur.elasticsearch.demo.client.ESClient;
+import com.mashhur.elasticsearch.demo.client.EsClient;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.slf4j.Logger;
@@ -13,9 +13,9 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 public class IndexController {
     private static final Logger LOG = LoggerFactory.getLogger(IndexController.class);
 
-    private ESClient esClient;
+    private EsClient esClient;
 
-    public IndexController(ESClient esClient) {
+    public IndexController(EsClient esClient) {
         this.esClient = esClient;
     }
 

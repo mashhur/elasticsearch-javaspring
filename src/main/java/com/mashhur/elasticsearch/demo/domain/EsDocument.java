@@ -1,16 +1,16 @@
 package com.mashhur.elasticsearch.demo.domain;
 
-public class ESDocument {
+public class EsDocument {
     private String firstName;
     private String lastName;
     private int age;
     private String description;
 
-    public ESDocument() {
+    public EsDocument() {
 
     }
 
-    public ESDocument(String firstName, String lastName, int age, String description) {
+    public EsDocument(String firstName, String lastName, int age, String description) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;

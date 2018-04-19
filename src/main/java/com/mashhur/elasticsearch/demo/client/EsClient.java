@@ -9,17 +9,16 @@ import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 
-public class ESClient {
+public class EsClient {
 
     private TransportClient client;
 
-    public ESClient() {
-		Settings settings = Settings.builder()
-				.put("client.transport.sniff", true).build();
+    public EsClient(String host, int port) {
+		Settings settings = Settings.builder().put("client.transport.sniff", true).build();
 		client = new PreBuiltTransportClient(settings);
 		try {
 			client.addTransportAddress(new InetSocketTransportAddress(
-					InetAddress.getByAddress(new byte[] {127, 0, 0, 1}), 9300));
+					InetAddress.getByName(host), port));
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
