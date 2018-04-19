@@ -1,4 +1,4 @@
-package com.zenus.elasticsearch.demo.client;
+package com.mashhur.elasticsearch.demo.client;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
