@@ -40,4 +40,21 @@ public class QueryController {
         LOG.info("Response: " + response.toString());
         return response;
     }
+    
+    public SearchResponse search(String indexName, ESDocument esDocument) { // make ESDocument and set size, from, type, etc...
+        QueryBuilder queryBuilder = JoinQueryBuilders.hasParentQuery(
+                    "parent", // parent type
+                    QueryBuilders.matchQuery("parentId", esDocument.getParentId()),
+                    false);
+
+        SearchResponse response = esClient.getClient().prepareSearch(indexName)
+                .setTypes(esDocument.getType()) // child type
+                .setSearchType(SearchType.DEFAULT)
+                .setQuery(queryBuilder)
+                .setFrom(esDocument.getFrom()).setSize(esDocument.getSize()).setExplain(false)
+                .execute()
+                .actionGet();
+        LOG.info("Response: " + response.toString());
+        return response;
+    }
 }
