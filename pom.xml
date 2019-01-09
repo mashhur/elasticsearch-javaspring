@@ -13,7 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <es.version>5.5.3</es.version>
-    <jackson.version>2.6.2</jackson.version>
+    <jackson.version>2.8.11.1</jackson.version>
     <slf4j.version>1.7.25</slf4j.version>
   </properties>
 
